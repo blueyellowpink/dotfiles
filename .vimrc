@@ -1,5 +1,8 @@
 set number
+set cursorline
 
+
+"One Dark theme config"
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -18,3 +21,29 @@ endif
 
 syntax on
 colorscheme onedark
+
+
+"lightline.vim config"
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'one'
+      \ }
+set noshowmode
+
+
+"auto pairs"
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+
+"rainbow bracket config"
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\	'guifgs': ['lightmagenta', 'yellow', 'cyan', 'orange', 'green', 'lightblue'],
+\	'ctermfgs': ['lightmagenta', 'yellow', 'cyan', 'green', 'lightblue']
+\}
