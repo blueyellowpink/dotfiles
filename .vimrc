@@ -1,6 +1,8 @@
 set number
 set cursorline
-
+set shiftwidth=4
+set tabstop=4
+set expandtab
 
 "One Dark theme config"
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
