@@ -2,14 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ffffff,bg=#66aebd"                                                                                                                                  
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/bakasaka/.oh-my-zsh"
+
+export HISTCONTROL=ignoreboth:erasedups
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
+
+export ZSH="/home/bakasaka/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="pi"
+ZSH_THEME="refined"
 
 
 # ZSH_THEME="elessar"
@@ -97,56 +108,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 
-alias venv="source venv/bin/activate"
-alias platform126="echo 'imquang188' | sudo -S kubefwd svc -n default -n platform126"
-alias myip="curl ifconfig.me"
-alias c="cd ~/Projects"
-alias newtab="qdbus $KONSOLE_DBUS_SERVICE $KONSOLE_DBUS_WINDOW newSession"
-alias gitconfig_foobla="git config user.name 'Duy Quang' && git config user.email 'quangnd@foobla.com'"
-alias pls="sudo"
-alias zshconfig="nano ~/.zshrc"
-alias tree="tree -I node_modules"
-alias gcom="git commit -m"
-alias cl="clear"
-alias del="rm -rf"
-alias jupyter-kernel="ipython kernel install --user --name=venv"
-alias tat="shutdown now"
-alias torch="source ~/virtualenvs/pytorch/bin/activate"
-
 #source /home/bakasaka/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-source /usr/share/nvm/init-nvm.sh
-export PATH=$PATH:~/.yarn/bin
-
-###
-setopt auto_cd
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/bakasaka/google-cloud-sdk/path.zsh.inc' ]; then . '/home/bakasaka/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/bakasaka/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/bakasaka/google-cloud-sdk/completion.zsh.inc'; fi
-
-#####
-source /home/bakasaka/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
-# Cd-ing to auto-activate virtualenv python
-function cd() {
-  builtin cd "$@"
-
-  if [[ -z "$VIRTUAL_ENV" ]] ; then
-    ## If env folder is found then activate the vitualenv
-      if [[ -d ./venv ]] ; then
-        source ./venv/bin/activate
-      fi
-  else
-    ## check the current folder belong to earlier VIRTUAL_ENV folder
-    # if yes then do nothing
-    # else deactivate
-      parentdir="$(dirname "$VIRTUAL_ENV")"
-      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
-        deactivate
-      fi
-  fi
-}
+# alias ohmyzsh="mate ~/.oh-my-zsh
