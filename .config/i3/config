@@ -14,8 +14,10 @@ border_radius 7
 default_border pixel 1
 default_floating_border pixel 1
 
-gaps inner 15
-gaps outer 30
+ gaps top 35
+ gaps horizontal 20
+ gaps bottom 20
+ gaps inner 15 
 
 bindsym $mod+z          gaps outer current plus 5
 bindsym $mod+Shift+z    gaps outer current minus 5
