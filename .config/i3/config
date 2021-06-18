@@ -10,13 +10,13 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # i3-gaps-rounded
-border_radius 7
-default_border pixel 1
-default_floating_border pixel 1
+border_radius 0
+default_border pixel 2
+default_floating_border pixel 2
 
-gaps top 35
-gaps horizontal 20
-gaps bottom 20
+gaps top 35                                                                                                                                                                                                   
+gaps horizontal 15
+gaps bottom 10
 gaps inner 15
 
 # focus border
