@@ -1,4 +1,4 @@
-"plugins: nerdtree, onedark.vim, lightline, indentline, rainbowbracket"
+"plugins: nerdtree, onedark.vim, lightline, indentline, rainbowbracket, vim-polyglot"
 
 set number
 set cursorline
