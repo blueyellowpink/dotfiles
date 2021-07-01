@@ -2,7 +2,13 @@ set number
 set cursorline
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 set expandtab
+
+" Auto-start NERDTree when open Vim "
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 "One Dark theme config"
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -49,3 +55,6 @@ let g:rainbow_conf = {
 \	'guifgs': ['lightmagenta', 'yellow', 'cyan', 'orange', 'green', 'lightblue'],
 \	'ctermfgs': ['lightmagenta', 'yellow', 'cyan', 'green', 'lightblue']
 \}
+
+"indent line"
+let g:indentLine_char_list = ['|']
