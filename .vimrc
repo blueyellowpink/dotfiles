@@ -1,3 +1,5 @@
+"plugins: nerdtree, onedark.vim, lightline, indentline, rainbowbracket"
+
 set number
 set cursorline
 set shiftwidth=4
