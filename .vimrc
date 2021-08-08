@@ -16,6 +16,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
+
 "One Dark theme config"
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -65,3 +66,7 @@ let g:indentLine_char_list = ['|']
 
 "disable autoindent vim-polyglot"
 let g:polyglot_disabled = ['autoindent']
+
+" terminal remap "
+tnoremap <Esc> <C-\><C-n>
+autocmd TermOpen * :set nonumber norelativenumber
