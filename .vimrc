@@ -1,7 +1,6 @@
 "plugins: nerdtree, onedark.vim, lightline, indentline, rainbowbracket, vim-polyglot"
 
 set number
-set cursorline
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -67,6 +66,16 @@ let g:indentLine_char_list = ['|']
 "disable autoindent vim-polyglot"
 let g:polyglot_disabled = ['autoindent']
 
-" terminal remap "
+" terminal remap, alias and custom keymap for terminal"
 tnoremap <Esc> <C-\><C-n>
-autocmd TermOpen * :set nonumber norelativenumber
+if (has('nvim'))
+  autocmd TermOpen * set nonumber norelativenumber
+endif
+command Term execute "tabnew | terminal"
+noremap <A-h> :-tabm<cr>
+noremap <A-l> :+tabm<cr>
+
+"set cursor line"
+set cursorline
+hi CursorLine gui=underline cterm=underline 
+"hi CursorLine gui=underline cterm=underlin etermfg=white guifg=white"
