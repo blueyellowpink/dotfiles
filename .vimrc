@@ -6,6 +6,9 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
+"remap command"
+nnoremap gm gM
+
 " Auto-start NERDTree when open Vim "
 autocmd VimEnter * NERDTree | wincmd p | call lightline#update()
 " Exit Vim if NERDTree is the only window left.
