@@ -81,4 +81,5 @@ noremap <A-l> :+tabm<cr>
 "set cursor line"
 set cursorline
 hi CursorLine gui=underline cterm=underline 
-"hi CursorLine gui=underline cterm=underlin etermfg=white guifg=white"
+hi MatchParen gui=standout cterm=standout
+"hi CursorLine gui=underline cterm=underline ctermfg=white guifg=white"
