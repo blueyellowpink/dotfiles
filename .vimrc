@@ -6,11 +6,16 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
+
 "remap command"
 nnoremap gm gM
 
+
 " Auto-start NERDTree when open Vim "
 autocmd VimEnter * NERDTree | wincmd p | call lightline#update()
+"show hidden files"
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git$']
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Close the tab if NERDTree is the only window remaining in it.
@@ -39,12 +44,17 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 syntax on
 colorscheme onedark
 
+let s:background = {"gui": "#272a36", "cterm": "235", "cterm16": "0"}
+hi Normal guibg=s:background
+
+
 "lightline.vim config"
 set laststatus=2
 let g:lightline = {
     \ 'colorscheme': 'one'
 \}
 set noshowmode
+
 
 "auto pairs"
 inoremap " ""<left>
@@ -63,11 +73,12 @@ let g:rainbow_conf = {
 \	'ctermfgs': ['lightmagenta', 'yellow', 'cyan', 'green', 'lightblue']
 \}
 
+
 "indent line"
 let g:indentLine_char_list = ['|']
-
 "disable autoindent vim-polyglot"
 let g:polyglot_disabled = ['autoindent']
+
 
 " terminal remap, alias and custom keymap for terminal"
 tnoremap <Esc> <C-\><C-n>
@@ -77,6 +88,7 @@ endif
 command Term execute "tabnew | terminal"
 noremap <A-h> :-tabm<cr>
 noremap <A-l> :+tabm<cr>
+
 
 "set cursor line"
 set cursorline
