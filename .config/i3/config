@@ -225,7 +225,7 @@ no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # Wallpaper settings
-exec_always feh --bg-fill --randomize /home/bakasaka/Pictures/wallpapers
+exec_always --no-startup-id feh --bg-fill --randomize /home/bakasaka/Pictures/wallpapers
 #exec_always --no-startup-id feh --bg-fill /home/bakasaka/Pictures/wallpapers/wp8907887.webp
 
 # Autotiling
