@@ -1,15 +1,18 @@
-"plugins: nerdtree, onedark.vim, lightline, indentline, rainbowbracket, vim-polyglot"
+"plugins: nerdtree, onedark.vim, lightline, indentline, rainbowbracket, vim-polyglot, vim-gitgutter"
 
 set number
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+set updatetime=100
 
 
 "remap command"
 nnoremap gm gM
-
+nmap ghp <Plug>(GitGutterPreviewHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
 
 " Auto-start NERDTree when open Vim "
 autocmd VimEnter * NERDTree | wincmd p | call lightline#update()
