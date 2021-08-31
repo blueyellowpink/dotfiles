@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/bakasaka/.config/polybar/grayblocks'
-let g:netrw_dirhist_3='/home/bakasaka/.config'
-let g:netrw_dirhist_2='/home/bakasaka/.config/polybar'
-let g:netrw_dirhist_1='/home/bakasaka/.kde4/share/config'
