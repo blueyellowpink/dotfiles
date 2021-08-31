@@ -11,6 +11,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
+Plug 'sheerun/vim-polyglot'
+
+Plug 'prettier/vim-prettier', {
+\'do': 'yarn install',
+\'for': ['javascript', 'json', 'markdown', 'html']
+\}
+
 
 call plug#end()
 
@@ -111,3 +118,9 @@ set cursorline
 hi CursorLine gui=underline cterm=underline 
 hi MatchParen gui=standout cterm=standout
 "hi CursorLine gui=underline cterm=underline ctermfg=white guifg=white"
+
+
+"vim prettier"
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#semi = 'false'
