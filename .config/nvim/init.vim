@@ -3,6 +3,7 @@
 ""source ~/.vimrc
 
 " ~/.local/share/nvimplugged/ "
+let g:polyglot_disabled = ['autoindent']
 call plug#begin(has('nvim') ? stdpath('data') . 'plugged' : '~/.vim/plugged')
 
 Plug 'preservim/nerdtree'
@@ -12,17 +13,24 @@ Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
-
 Plug 'prettier/vim-prettier', {
 \'do': 'yarn install',
 \'for': ['javascript', 'json', 'markdown', 'html']
 \}
-
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
 
-set number
+set number relativenumber
+set nu rnu
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -80,13 +88,13 @@ set noshowmode
 
 
 "auto pairs"
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+""inoremap " ""<left>
+""inoremap ' ''<left>
+""inoremap ( ()<left>
+""inoremap [ []<left>
+""inoremap { {}<left>
+""inoremap {<CR> {<CR>}<ESC>O
+""inoremap {;<CR> {<CR>};<ESC>O
 
 
 "rainbow bracket config"
