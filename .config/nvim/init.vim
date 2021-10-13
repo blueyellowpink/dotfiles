@@ -106,17 +106,6 @@ let g:lightline = {
 \}
 set noshowmode
 
-
-"auto pairs"
-""inoremap " ""<left>
-""inoremap ' ''<left>
-""inoremap ( ()<left>
-""inoremap [ []<left>
-""inoremap { {}<left>
-""inoremap {<CR> {<CR>}<ESC>O
-""inoremap {;<CR> {<CR>};<ESC>O
-
-
 "rainbow bracket config"
 let g:rainbow_active = 1
 let g:rainbow_conf = {
