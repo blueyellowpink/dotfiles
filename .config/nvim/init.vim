@@ -6,6 +6,8 @@
 let g:polyglot_disabled = ['autoindent']
 call plug#begin(has('nvim') ? stdpath('data') . 'plugged' : '~/.vim/plugged')
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'preservim/nerdtree'
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
@@ -21,16 +23,16 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-
+"line number"
 set number relativenumber
 set nu rnu
-
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
+"general"
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -42,6 +44,24 @@ nnoremap gm gM
 nmap ghp <Plug>(GitGutterPreviewHunk)
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup{
+    defaults = {
+        mappings = {
+            n = {
+                ["t"] = actions.select_tab
+            },
+        },
+    }
+}
+EOF
 
 " Auto-start NERDTree when open Vim "
 autocmd VimEnter * NERDTree | wincmd p | call lightline#update()
