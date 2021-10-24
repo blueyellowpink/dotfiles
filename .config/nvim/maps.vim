@@ -1,0 +1,8 @@
+" terminal remap, alias and custom keymap for terminal"
+tnoremap <Esc> <C-\><C-n>
+if (has('nvim'))
+    autocmd TermOpen * set nonumber norelativenumber
+endif
+command Term execute "tabnew | terminal"
+noremap <A-h> :-tabm<cr>
+noremap <A-l> :+tabm<cr>
