@@ -11,7 +11,6 @@ Plug 'projekt0n/circles.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'joshdick/onedark.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'itchyny/lightline.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'luochen1990/rainbow'
 Plug 'sheerun/vim-polyglot'
@@ -27,18 +26,21 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 call plug#end()
 
 runtime ./onedark.vim
 
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
+
 "line number"
 set number relativenumber
 set nu rnu
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
 "general"
@@ -46,7 +48,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-set smarttab
+"set smarttab
 set updatetime=100
 
 "set cursor line"
