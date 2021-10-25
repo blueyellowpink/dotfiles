@@ -66,8 +66,7 @@ local config = {
         lualine_c = {},
         lualine_x = {},
     },
-    tabline = {
-    }
+    tabline = {}
 }
 
 -- Inserts a component in lualine_c at left section
@@ -133,9 +132,15 @@ ins_left {
     color = { fg = colors.magenta, gui = 'bold' },
 }
 
-ins_left { 'location' }
+ins_left {
+    'branch',
+    icon = '',
+    color = { fg = colors.blue, gui = 'bold' },
+}
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = colors.yellow, gui = 'bold' } }
+
+ins_left { 'location' }
 
 ins_left {
     'diagnostics',
@@ -190,12 +195,6 @@ ins_right {
     fmt = string.upper,
     icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
     color = { fg = colors.green, gui = 'bold' },
-}
-
-ins_right {
-    'branch',
-    icon = '',
-    color = { fg = colors.violet, gui = 'bold' },
 }
 
 ins_right {
