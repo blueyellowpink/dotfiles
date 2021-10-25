@@ -1,4 +1,4 @@
-" LSP config (the mappings used in the default file don't quite work right)
+"p LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
@@ -15,14 +15,23 @@ nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 lua << EOF
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lspconfig = require'lspconfig'
+local status, lspconfig = pcall(require, 'lspconfig')
+if (not status) then return end
 
---- install pyright: npm i -g pyright
+-- install python ls: npm i -g pyright
 lspconfig.pyright.setup {
     capabilities = capabilities
 }
---- install bash: npm i -g bash-language-server
+-- install bash ls: npm i -g bash-language-server
 lspconfig.bashls.setup {
+    capabilities = capabilities
+}
+-- install cmake ls: pip install cmake-language-server
+lspconfig.cmake.setup {
+    capabilities = capabilities
+}
+-- install c/c++ ls: sudo pacman -S ccls
+lspconfig.ccls.setup {
     capabilities = capabilities
 }
 EOF
