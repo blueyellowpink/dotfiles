@@ -6,3 +6,11 @@ endif
 command Term execute "tabnew | terminal"
 noremap <A-h> :-tabm<cr>
 noremap <A-l> :+tabm<cr>
+command WQ wq
+command Wq wq
+command WA wa
+command Wa wa
+command QA qa
+command Qa qa
+command W w
+command Q q

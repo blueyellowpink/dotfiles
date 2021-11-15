@@ -6,7 +6,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 lua << EOF
-local actions = require('telescope.actions')
+local status, actions = pcall(require, 'telescope.actions')
+if (not status) then return end
+
 require('telescope').setup {
     defaults = {
         mappings = {

@@ -20,7 +20,17 @@ if (not status) then return end
 
 -- install python ls: npm i -g pyright
 lspconfig.pyright.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+        python = {
+            analysis = {
+                diagnosticMode = "workspace"
+            }
+        },
+        pyright = {
+            disableLanguageServices = false
+        }
+    }
 }
 -- install bash ls: npm i -g bash-language-server
 lspconfig.bashls.setup {

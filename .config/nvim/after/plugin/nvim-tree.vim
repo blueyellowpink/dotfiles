@@ -76,7 +76,10 @@ set termguicolors " this variable must be enabled for colors to be applied prope
 highlight NvimTreeFolderIcon guibg=blue
 
 lua << EOF
-require'nvim-tree'.setup {
+local status, tree = pcall(require, 'nvim-tree')
+if (not status) then return end
+
+tree.setup {
     -- disables netrw completely
     disable_netrw       = true,
     -- hijack netrw window on startup

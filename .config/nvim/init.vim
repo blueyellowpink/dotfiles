@@ -29,7 +29,6 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 
 call plug#end()
-
 runtime ./onedark.vim
 
 au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
@@ -58,5 +57,9 @@ hi MatchParen gui=standout cterm=standout
 "hi CursorLine gui=underline cterm=underline ctermfg=white guifg=white"
 
 hi LineNr guifg=#abb2bf
+
+hi TabLineFill guifg=#abb2bf
+hi TabLine guifg=#abb2bf 
+hi TabLineSel guifg=#e5c07b guibg=#be5046
 
 runtime ./maps.vim
