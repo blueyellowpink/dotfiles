@@ -60,6 +60,6 @@ hi LineNr guifg=#abb2bf
 
 hi TabLineFill guifg=#abb2bf
 hi TabLine guifg=#abb2bf 
-hi TabLineSel guifg=#e5c07b guibg=#be5046
+hi TabLineSel guifg=#ffffff guibg=#61afef
 
 runtime ./maps.vim
