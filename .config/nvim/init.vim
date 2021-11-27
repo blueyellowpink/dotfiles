@@ -27,6 +27,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'b3nj5m1n/kommentary'
 
 call plug#end()
 runtime ./onedark.vim
