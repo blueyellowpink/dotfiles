@@ -3,7 +3,7 @@ tnoremap <Esc> <C-\><C-n>
 if (has('nvim'))
     autocmd TermOpen * set nonumber norelativenumber
 endif
-command Term execute "tabnew | terminal"
+command Term execute "tabnew | term"
 noremap <A-h> :-tabm<cr>
 noremap <A-l> :+tabm<cr>
 command WQ wq

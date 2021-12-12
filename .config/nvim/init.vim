@@ -1,13 +1,17 @@
 " ~/.local/share/nvimplugged/ "
+
+set shell=/bin/zsh
+
 let g:polyglot_disabled = ['autoindent']
 
+" start vim-plug
 call plug#begin(has('nvim') ? stdpath('data') . 'plugged' : '~/.vim/plugged')
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'projekt0n/circles.nvim'
+" Plug 'projekt0n/circles.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'joshdick/onedark.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -30,6 +34,9 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'b3nj5m1n/kommentary'
 
 call plug#end()
+" end vim-plug
+
+
 runtime ./onedark.vim
 
 au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
