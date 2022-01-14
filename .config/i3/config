@@ -9,21 +9,31 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# set no border
+for_window [class="^.*"] border pixel 0
+
 # i3-gaps-rounded
 border_radius 0
 default_border pixel 2
 default_floating_border pixel 2
 
-gaps top 35                                                                                                                                                                                                   
-gaps horizontal 15
-gaps bottom 10
 gaps inner 15
+# gaps top 23
+# gaps bottom 0
+# gaps horizontal 0
+
+smart_borders on
 
 # focus border
-client.focused  #1abc9c #1abc9c    #ffffff #1abc9c   #1abc9c
-client.focused_inactive #c678dd #c678dd #ffffff #282c34 #282c34
+# client.focused          #ABB2BF #ABB2BF #F8F8F2 #ABB2BF   #ABB2BF
+client.focused          #ABB2BF #ABB2BF #F8F8F2 #ABB2BF   #ABB2BF
+client.focused_inactive #ABB2BF #ABB2BF #F8F8F2 #ABB2BF   #ABB2BF
+client.unfocused        #ABB2BF #ABB2BF #F8F8F2 #ABB2BF   #ABB2BF
+client.urgent           #ABB2BF #ABB2BF #F8F8F2 #ABB2BF   #ABB2BF
+client.placeholder      #ABB2BF #ABB2BF #F8F8F2 #ABB2BF   #ABB2BF
+# client.background       #F8F8F2
 
-# resize mapping
+# bind key for resize
 bindsym $mod+z          gaps outer current plus 5
 bindsym $mod+Shift+z    gaps outer current minus 5
 bindsym $mod+x          gaps inner current plus 5
@@ -77,10 +87,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -89,10 +99,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -101,10 +111,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -225,11 +235,14 @@ no_focus [class="plasmashell" window_type="notification"]
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # Wallpaper settings
-exec_always --no-startup-id feh --bg-fill --randomize /home/bakasaka/Pictures/wallpapers
-#exec_always --no-startup-id feh --bg-fill /home/bakasaka/Pictures/wallpapers/wp8907887.webp
+exec_always --no-startup-id feh --bg-fill /home/bakasaka/Pictures/wallpapers/pink.jpg
+# exec_always --no-startup-id feh --bg-fill /home/bakasaka/Pictures/wallpapers/cmatrix.png
 
 # Autotiling
 exec_always --no-startup-id autotiling
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --grayblocks
+exec_always --no-startup-id $HOME/.config/polybar/nord/launch.sh dark
+
+# Picom
+exec_always --no-startup-id picom
