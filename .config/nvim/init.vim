@@ -29,6 +29,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'b3nj5m1n/kommentary'
+Plug 'phaazon/hop.nvim'
 
 call plug#end()
 runtime ./onedark.vim
@@ -54,7 +55,9 @@ set updatetime=100
 
 "set cursor line"
 set cursorline
-hi CursorLine gui=underline cterm=underline 
+hi clear CursorLine
+hi CursorLineNR guibg=#61afef guifg=#ffffff
+" hi CursorLine gui=underline cterm=underline 
 hi MatchParen gui=standout cterm=standout
 "hi CursorLine gui=underline cterm=underline ctermfg=white guifg=white"
 
