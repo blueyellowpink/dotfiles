@@ -30,13 +30,11 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'b3nj5m1n/kommentary'
 Plug 'phaazon/hop.nvim'
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 runtime ./onedark.vim
 
-" au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
 
 "line number"
 set number relativenumber
@@ -61,7 +59,7 @@ hi clear CursorLine
 hi CursorLineNR guibg=#61afef guifg=#ffffff
 " hi CursorLine gui=underline cterm=underline 
 hi MatchParen gui=standout cterm=standout
-"hi CursorLine gui=underline cterm=underline ctermfg=white guifg=white"
+" hi CursorLine gui=underline cterm=underline ctermbg=white guibg=white
 
 hi LineNr guifg=#abb2bf
 

@@ -14,4 +14,3 @@ command QA qa
 command Qa qa
 command W w
 command Q q
-
