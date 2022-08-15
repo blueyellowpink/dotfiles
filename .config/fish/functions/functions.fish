@@ -1,16 +1,15 @@
-function ..
-    cd ..
-end
-
 function lash
     ls -lash
 end
 
-function xsetrate
-    xset r rate 150 30
+function ..
+    cd ..
 end
 
-function venv
-    source /home/bakasaka/Virtualenvs/$argv/bin/activate.fish
-    # set VIRTUAL_ENV '/home/bakasaka/Virtualenvs/websaudaihoc'
+function sudo
+    if test "$argv" = !!
+        eval command sudo $history[1]
+    else
+        command sudo $argv
+    end
 end
