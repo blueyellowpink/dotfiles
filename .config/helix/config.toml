@@ -1,0 +1,38 @@
+theme = "onedark_custom"
+
+[editor]
+line-number = "relative"
+mouse = true
+scrolloff = 8
+cursorline = true
+cursorcolumn = false
+bufferline = "always"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "file-name", "position-percentage", "position", "version-control"]
+center = ["spinner"]
+right = ["diagnostics", "selections", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "all"
+
+[editor.gutters.line-numbers]
+min-width = 1
