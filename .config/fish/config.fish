@@ -13,6 +13,6 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
-set -gx EDITOR nvim
+set -gx EDITOR hx
 
 bass source $HOME/.cargo/env
