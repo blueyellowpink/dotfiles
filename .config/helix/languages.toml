@@ -2,8 +2,15 @@
 name = "rust"
 
 [language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
 '<' = '>'
+"'" = "'"
+'|' = '|'
 
 [language.language-server]
 command = "rustup"
-args = ["run", "1.65.0", "rust-analyzer"]
+args = ["run", "stable", "rust-analyzer"]
