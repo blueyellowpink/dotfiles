@@ -1,5 +1,16 @@
 theme = "onedark_custom"
 
+[keys.normal]
+x = "extend_to_line_bounds"
+C = ["delete_selection", "kill_to_line_end", "insert_mode"]
+D = ["delete_selection", "kill_to_line_end"]
+V = ["extend_to_line_bounds", "select_mode"]
+C-v = "copy_selection_on_next_line"
+
+[keys.insert]
+
+[keys.select]
+
 [editor]
 line-number = "relative"
 mouse = true
