@@ -1,38 +1,28 @@
 " ~/.local/share/nvimplugged/ "
 
-let g:polyglot_disabled = ['autoindent']
-
 call plug#begin(has('nvim') ? stdpath('data') . 'plugged' : '~/.vim/plugged')
-
+Plug 'nvim-tree/nvim-web-devicons'
+" Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'echasnovski/mini.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'joshdick/onedark.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'luochen1990/rainbow'
-Plug 'sheerun/vim-polyglot'
-Plug 'prettier/vim-prettier', {
-\'do': 'yarn install',
-\'for': ['javascript', 'json', 'markdown', 'html']
-\}
-Plug 'jiangmiao/auto-pairs'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'simrat39/rust-tools.nvim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'b3nj5m1n/kommentary'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'phaazon/hop.nvim'
-
+Plug 'feline-nvim/feline.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'SmiteshP/nvim-navic'
 call plug#end()
-runtime ./onedark.vim
+
+"runtime ./onedark.vim
 
 au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
 
@@ -60,14 +50,13 @@ set updatetime=100
 set cursorline
 hi clear CursorLine
 hi CursorLineNR guibg=#61afef guifg=#ffffff
-" hi CursorLine gui=underline cterm=underline 
+" hi CursorLine gui=underline cterm=underline
 hi MatchParen gui=standout cterm=standout
 " hi CursorLine gui=underline cterm=underline ctermbg=white guibg=white
 
 hi LineNr guifg=#abb2bf
-
 hi TabLineFill guifg=#abb2bf
-hi TabLine guifg=#abb2bf 
+hi TabLine guifg=#abb2bf
 hi TabLineSel guifg=#ffffff guibg=#61afef
 
 runtime ./maps.vim

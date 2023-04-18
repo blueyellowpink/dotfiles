@@ -14,3 +14,7 @@ command QA qa
 command Qa qa
 command W w
 command Q q
+
+nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
