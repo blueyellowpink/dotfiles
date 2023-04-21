@@ -60,3 +60,5 @@ hi TabLine guifg=#abb2bf
 hi TabLineSel guifg=#ffffff guibg=#61afef
 
 runtime ./maps.vim
+
+lua require('auto_format')
