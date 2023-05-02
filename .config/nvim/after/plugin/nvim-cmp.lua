@@ -19,9 +19,9 @@ cmp.setup({
         ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     },
     sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            -- { name = 'vsnip' }, -- For vsnip users.
-            { name = 'buffer' },
-            { name = 'path' },
-        })
+        { name = 'nvim_lsp' },
+        -- { name = 'vsnip' }, -- For vsnip users.
+        { name = 'buffer' },
+        { name = 'path' },
+    })
 })

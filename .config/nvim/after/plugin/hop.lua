@@ -4,7 +4,7 @@ hop.setup()
 local directions = require('hop.hint').HintDirection
 
 vim.keymap.set('', 'f', function()
-  hop.hint_words()
+    hop.hint_words()
 end, { remap=true })
 
 -- vim.keymap.set('', 'F', function()

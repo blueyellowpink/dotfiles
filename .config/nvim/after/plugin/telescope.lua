@@ -21,9 +21,9 @@ require('telescope').setup {
             },
         },
     },
-	pickers = {
-		file_files = {
-			find_command = {'rg', '--files', '--hidden', '--glob', '!.git' }
-		}
-	}
+    pickers = {
+        file_files = {
+            find_command = {'rg', '--files', '--hidden', '--glob', '!.git' }
+        }
+    }
 }

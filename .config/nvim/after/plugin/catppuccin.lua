@@ -6,14 +6,14 @@ require("catppuccin").setup({
         dark = "mocha",
     },
     transparent_background = false,
-    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    show_end_of_buffer = true, -- show the '~' characters after the end of buffers
     term_colors = false,
     dim_inactive = {
         enabled = false,
         shade = "dark",
         percentage = 0.15,
     },
-    no_italic = false, -- Force no italic
+    no_italic = true, -- Force no italic
     no_bold = false, -- Force no bold
     styles = {
         comments = {},
@@ -37,16 +37,17 @@ require("catppuccin").setup({
         nvimtree = true,
         telescope = true,
         mini = true,
-		indent_blankline = {
+        lsp_trouble = true,
+        hop = true,
+        treesitter = true,
+        navic = {
+            enabled = true,
+            custom_bg = "NONE",
+        },
+        indent_blankline = {
             enabled = true,
             colored_indent_levels = false,
         },
-		lsp_trouble = true,
-		hop = true,
-		navic = {
-			enabled = true,
-			custom_bg = "NONE",
-		}
     },
 })
 
