@@ -48,6 +48,8 @@ require("catppuccin").setup({
             enabled = true,
             colored_indent_levels = false,
         },
+        lsp_saga = true,
+        which_key = true,
     },
 })
 

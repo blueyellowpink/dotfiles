@@ -1,3 +1,4 @@
+-- install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -43,7 +44,6 @@ require('lazy').setup({
     'phaazon/hop.nvim',
     'feline-nvim/feline.nvim',
     'neovim/nvim-lspconfig',
-    -- 'SmiteshP/nvim-navic',
     {
         "glepnir/lspsaga.nvim",
         lazy = true,
@@ -53,7 +53,10 @@ require('lazy').setup({
                 lightbulb = {
                     enable = false,
                     enable_in_insert = false,
-                }
+                },
+                ui = {
+                    kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+                },
             })
         end,
         dependencies = {
@@ -61,5 +64,12 @@ require('lazy').setup({
             -- Please make sure you install markdown and markdown_inline parser
             { "nvim-treesitter/nvim-treesitter" }
         }
-    }
+    },
+    {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 500
+        end,
+    },
 })
