@@ -4,7 +4,7 @@ local U = require "catppuccin.utils.colors"
 
 ctp_feline.setup({
     assets = {
-        mode_icon = "",
+        mode_icon = "",
         dir = "",
         file = "",
         lsp = {
