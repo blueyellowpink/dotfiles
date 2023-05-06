@@ -1,4 +1,7 @@
-local clrs = require("catppuccin.palettes").get_palette()
+local status, palettes = pcall(require, "catppuccin.palettes")
+if (not status) then return end
+
+local clrs = palettes.get_palette()
 local ctp_feline = require('catppuccin.groups.integrations.feline')
 local U = require "catppuccin.utils.colors"
 

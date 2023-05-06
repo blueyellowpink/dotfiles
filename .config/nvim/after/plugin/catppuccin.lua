@@ -1,4 +1,7 @@
-require("catppuccin").setup({
+local status, catppuccin = pcall(require, 'catppuccin')
+if (not status) then return end
+
+catppuccin.setup({
     compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
