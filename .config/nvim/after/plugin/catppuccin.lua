@@ -1,6 +1,26 @@
 local status, catppuccin = pcall(require, 'catppuccin')
 if (not status) then return end
 
+local telescopeBorderless = function(flavor)
+    local cp = require("catppuccin.palettes").get_palette(flavor)
+
+    return {
+        TelescopeBorder = { fg = cp.surface0, bg = cp.surface0 },
+        TelescopeSelectionCaret = { fg = cp.flamingo, bg = cp.surface1 },
+        TelescopeMatching = { fg = cp.peach },
+        TelescopeNormal = { bg = cp.surface0 },
+        TelescopeSelection = { fg = cp.text, bg = cp.surface1 },
+        TelescopeMultiSelection = { fg = cp.text, bg = cp.surface2 },
+
+        TelescopeTitle = { fg = cp.crust, bg = cp.green },
+        TelescopePreviewTitle = { fg = cp.crust, bg = cp.red },
+        TelescopePromptTitle = { fg = cp.crust, bg = cp.mauve },
+
+        TelescopePromptNormal = { fg = cp.flamingo, bg = cp.crust },
+        TelescopePromptBorder = { fg = cp.crust, bg = cp.crust },
+    }
+end
+
 catppuccin.setup({
     compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
@@ -34,6 +54,12 @@ catppuccin.setup({
     },
     color_overrides = {},
     custom_highlights = {},
+    highlight_overrides = {
+        latte = telescopeBorderless('latte'),
+        frappe = telescopeBorderless('frappe'),
+        macchiato = telescopeBorderless('macchiato'),
+        mocha = telescopeBorderless('mocha'),
+    },
     integrations = {
         cmp = true,
         gitsigns = true,

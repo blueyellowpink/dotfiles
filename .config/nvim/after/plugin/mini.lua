@@ -1,7 +1,3 @@
-require('mini.cursorword').setup()
-vim.cmd('hi! link MiniCursorword Visual')
-vim.cmd('hi! MiniCursorwordCurrent gui=nocombine guifg=NONE guibg=NONE')
-
 require('mini.surround').setup({
     mappings = {
         add = 'ma', -- Add surrounding in Normal and Visual modes
@@ -32,3 +28,7 @@ require('mini.bufremove').setup()
 require('mini.trailspace').setup()
 require('mini.starter').setup()
 -- require('mini.tabline').setup()
+
+require('mini.cursorword').setup()
+vim.cmd('hi! link MiniCursorword Visual')
+vim.cmd('hi! MiniCursorwordCurrent gui=nocombine guifg=NONE guibg=NONE')
